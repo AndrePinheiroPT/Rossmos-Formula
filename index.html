@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rossmo's Formula</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title">Rossmo's Formula Simulator</h1>
+    <canvas height="30" width="30" class="canvas"></canvas>
+    <div class="control">
+        <button class="buttons">Add Crime</button><br>
+        <form>
+            <div class="labels">The size of the <strong>buffer zone</strong>, B.</div>
+            <input type="range" min="0" max="10" class="inputs" id="B-range"><output id="B-output">0.00</output>
+            <div class="labels">
+                The value f says how fast the 
+                <br>probability decays <strong>beyond</strong> the buffer zone.
+            </div>
+            <input type="range" min="0" max="2" step="0.01" class="inputs" id="f-range"><output id="f-output">0.00</output>
+            <div class="labels">
+                The value g says how fast the 
+                <br>probability decays <strong>inside</strong> the buffer zone.
+            </div>
+            <input type="range" min="0" max="5" step="0.01" class="inputs" id="g-range"><output id='g-output'>0.00</output>
+        </form>
+    </div>
+    <div class="content">
+        Rossmo's formula is used to predict where a serial criminal <br>
+        lives based on the location of the crimes.
+        <br>
+        The green cells indicate body drop sites. Using Rossmo's formula, the <br> 
+        probability \(P_{ij}\) for a given cell at row \(i\) and column \(j\) to be the killers residence is given by
+        \[P_{ij}=k\sum_{n=1}^{c}[\frac{\phi _{ij}}{(|X_{i}-x_{n}|+|Y_{j}-y_{n}|)^{f}}+\frac{(1-\phi _{ij})(B^{g-f})}{(2B-|X_{i}-x_{n}|-|Y_{j}-y_{n}|)^{g}}]\]
+        where \[\phi _{ij}=\left\{\begin{matrix}1,\mathrm{if}\enspace (|X_{i}-x_{n}|+|Y_{j}-y_{n}|)>B\\ 0,\mathrm{otherwise}\end{matrix}\right.\]
+        and is indicated by the color of each cell. The brighter the color <br>
+        the higher the probability.
+    </div>
+    <footer>
+Rossmo's Formula
+Copyright &copy;2021 André Pinheiro
+Read the licence for more informations.
+</footer>
+    <script >
+    MathJax = {
+      jax: ["input/TeX", "output/HTML-CSS"],
+      extensions: ["tex2jax.js"],
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic: false }  },
+      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
+      displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], 
+      processEscapes: true, 
+      ignoreClass: "tex2jax_ignore|dno" },
+      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+      messageStyle: "none"
+    };
+    </script>  
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/events.js"></script>
+</body>
+</html>
