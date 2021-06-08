@@ -6,14 +6,18 @@
     <title>Rossmo's Formula</title>
     <link rel="stylesheet" href="./style/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1 class="title">Rossmo's Formula Simulator</h1>
     <canvas height="30" width="30" class="canvas"></canvas>
     <div class="control">
-        <button class="buttons">Add Crime</button><br>
         <form>
+            <div class="labels">Add or remove:</div>
+            <input type="radio" name="location" class="inputs" id="crime" value="crime">
+            <label for="crime">Crime</label><br>
+            <input type="radio" name="location" class="inputs" id="residence" value="residence">
+            <label for="residence">Real residence</label><br>
             <div class="labels">The size of the <strong>buffer zone</strong>, B.</div>
             <input type="range" min="0" max="10" class="inputs" id="B-range"><output id="B-output">0.00</output>
             <div class="labels">

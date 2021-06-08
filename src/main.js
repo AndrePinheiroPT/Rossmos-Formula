@@ -1,16 +1,18 @@
 import { b, f, g } from './events.js'
 import { interpolateInferno } from "https://cdn.skypack.dev/d3-scale-chromatic@3"
 
-const canvas = document.querySelector('.canvas')
+export const canvas = document.querySelector('.canvas')
 const ctx = canvas.getContext('2d')
 
-const crimes = [
+export const crimes = [
     [3, 15],
     [17, 3],
     [18, 25],
     [22, 21],
     [27, 19]
 ]
+
+export const residence = [17, 18]
 
 let k = 5 / crimes.length
 
@@ -53,6 +55,8 @@ function renderScreen(){
         ctx.fillStyle = '#5EFA0F'
         ctx.fillRect(crime[0], crime[1], 1 ,1)
     }
+    ctx.fillStyle = '#5AFAEC'
+    ctx.fillRect(residence[0], residence[1], 1, 1)
 
     requestAnimationFrame(renderScreen)
 }
