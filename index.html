@@ -38,8 +38,10 @@
         <br>
         The green cells indicate body drop sites. Using Rossmo's formula, the <br> 
         probability \(P_{ij}\) for a given cell at row \(i\) and column \(j\) to be the killers residence is given by
-        \[P_{ij}=k\sum_{n=1}^{c}[\frac{\phi _{ij}}{(|X_{i}-x_{n}|+|Y_{j}-y_{n}|)^{f}}+\frac{(1-\phi _{ij})(B^{g-f})}{(2B-|X_{i}-x_{n}|-|Y_{j}-y_{n}|)^{g}}]\]
-        where \[\phi _{ij}=\left\{\begin{matrix}1,\mathrm{if}\enspace (|X_{i}-x_{n}|+|Y_{j}-y_{n}|)>B\\ 0,\mathrm{otherwise}\end{matrix}\right.\]
+        \[P_{ij}=k\sum_{n=0}^{c}\left[ \frac{\phi_{ij}}{\left( \left| X_{i}-x_{n}\right|+\left| Y_{j} - y_{n} \right|\right)^{f}} + 
+        \frac{\left(1 - \phi_{ij} \right)\left( B^{g-f} \right)}{\left(2B-\left
+        | X_{i}-x_{n}\right|+\left| Y_{j} - y_{n} \right|\right)^{g}}\right]\]
+        where \[\phi_{ij}=\begin{cases} 1, & \mbox{if } \left| X_{i}-x_{n}\right|+\left| Y_{j} - y_{n} \right| > B\\ 0, & \mbox{otherwise} \end{cases}\]
         and is indicated by the color of each cell. The brighter the color <br>
         the higher the probability.
     </div>
