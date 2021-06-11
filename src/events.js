@@ -10,8 +10,22 @@ const outputF = document.querySelector('#f-output')
 const inputG = document.querySelector('#g-range')
 const outputG = document.querySelector('#g-output')
 
+const inputOpacity = document.querySelector('#opacity-range')
+const outputOpacity = document.querySelector('#opacity-output')
+
+export const crimesResidenceMap = document.querySelector('#crimes-residence-map')
+export const probabilityMap = document.querySelector('#probability-map')
+
 export let mousePosition = []
-export let b, f, g
+export let b, f, g, opacity
+
+inputOpacity.defaultValue = 0.6
+outputOpacity.innerHTML = inputOpacity.value
+opacity = inputOpacity.value
+inputOpacity.oninput = function(){
+    outputOpacity.innerHTML = this.value
+    opacity = this.value
+}
 
 inputB.defaultValue = 5
 outputB.innerHTML = inputB.value

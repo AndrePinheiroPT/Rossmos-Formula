@@ -10,11 +10,17 @@ body{
     color: white
 }
 
+#map{
+    position: absolute; 
+    border: 0; 
+    padding: 10px
+}
+
 .canvas{
     position: absolute;
     padding: 10px;
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges;
@@ -31,13 +37,13 @@ body{
 
 .control{
     position: absolute;
-    top: 60px;
-    left: 375px;
+    top: 65px;
+    left: 524px;
 }
 
 .content{
     position: absolute;
-    left: 800px;
+    left: 860px;
     font-size: 11pt;
 }
 
